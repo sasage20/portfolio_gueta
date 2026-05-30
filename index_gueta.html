@@ -1,0 +1,517 @@
+<!-- index_gueta.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rexon Gueta | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style_gueta.css">
+</head>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const elements = document.querySelectorAll(
+    '.hero, .section-title, .about-content, .media-card, .project-card, .carousel-container, .contact'
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("show");
+
+      }
+
+    });
+
+  }, {
+    threshold: 0.12
+  });
+
+  elements.forEach((el) => {
+
+    el.classList.add("animate");
+
+    observer.observe(el);
+
+  });
+
+});
+
+</script>
+
+<script>
+function openGalleryImage(src, title = "") {
+
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox-title").textContent = title;
+
+  document.getElementById("lightbox").style.display = "flex";
+}
+</script>
+
+<body>
+
+  <header>
+    <div class="logo">Rexon</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Hello, I'm <span>Rexon Gueta</span></h1>
+      <h3>IT Student • Graphic Designer • Web Developer</h3>
+
+      <p>
+        I create modern websites, creative graphics, and interactive digital experiences.
+        Welcome to my personal portfolio.
+      </p>
+
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+
+    <div class="hero-image">
+    <img src="imgs/MY PICS/mypic.jpg" alt="Rexon Gueta">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-content">
+      <p>
+        I am an Information Technology student from Pamantasan ng Lungsod ng Valenzuela.
+        I enjoy designing websites, editing videos, creating graphics,
+        and building user-friendly digital projects.
+      </p>
+    </div>
+    
+<!-- FAVORITE MEDIA -->
+<div class="media-section">
+
+  <h3 class="media-title">My Favorite Media</h3>
+
+  <div class="media-cards">
+
+    <!-- MUSIC -->
+    <div class="media-card">
+
+      <button class="media-btn" onclick="toggleMedia('music-gallery')">
+
+        <img src="imgs/ICONS/music.png"
+          alt="Music Logo"
+          class="media-logo">
+
+      </button>
+
+      <div class="media-gallery" id="music-gallery">
+        <img src="imgs/MUSIC/MUSIC1.jpg" onclick="openGalleryImage(this.src,'Blonde - Frank Ocean')">
+        <img src="imgs/MUSIC/MUSIC2.jpg" onclick="openGalleryImage(this.src,'Call Me If You Get Lost - Tyler, The Creator')">
+        <img src="imgs/MUSIC/MUSIC3.jpg" onclick="openGalleryImage(this.src,'Underdressed At The Symphony - Faye Webster')">
+        <img src="imgs/MUSIC/MUSIC4.jpg" onclick="openGalleryImage(this.src,'CASE STUDY 01 - Daniel Caesar')">
+        <img src="imgs/MUSIC/MUSIC5.jpg" onclick="openGalleryImage(this.src,'good kid, m.A.A.d city - Kendrick Lamar')">
+        <img src="imgs/MUSIC/MUSIC6.jpg" onclick="openGalleryImage(this.src,'Currents - Tame Impala')">
+      </div>
+
+    </div>
+
+    <!-- FILMS -->
+    <div class="media-card">
+
+      <button class="media-btn" onclick="toggleMedia('films-gallery')">
+
+        <img src="imgs/ICONS/film.png"
+             alt="Films Logo"
+             class="media-logo">
+
+      </button>
+
+      <div class="media-gallery" id="films-gallery">
+        <img src="imgs/FILMS/VID1.jpg" onclick="openGalleryImage(this.src,'Interstellar')">
+        <img src="imgs/FILMS/VID2.jpg" onclick="openGalleryImage(this.src,'Ninjago')">
+        <img src="imgs/FILMS/VID3.jpg" onclick="openGalleryImage(this.src,'Breaking Bad')">
+        <img src="imgs/FILMS/VID4.jpg" onclick="openGalleryImage(this.src,'Fullmetal Alchemist: Brotherhood')">
+        <img src="imgs/FILMS/VID5.jpg" onclick="openGalleryImage(this.src,'Avengers: Infinity War')">
+        <img src="imgs/FILMS/VID6.jpg" onclick="openGalleryImage(this.src,'Howl\'s Moving Castle')">
+      </div>
+
+    </div>
+
+    <!-- GAMES -->
+<div class="media-card">
+
+  <button class="media-btn" onclick="toggleMedia('games-gallery')">
+
+    <img src="imgs/ICONS/game.png"
+         alt="Games Logo"
+         class="media-logo">
+
+  </button>
+
+  <div class="media-gallery" id="games-gallery">
+    <img src="imgs/GAMES/GAME1.jpg" onclick="openGalleryImage(this.src,'Red Dead Redemption 2')">
+    <img src="imgs/GAMES/GAME2.jpeg" onclick="openGalleryImage(this.src,'Resident Evil 7: Biohazard')">
+    <img src="imgs/GAMES/GAME3.webp" onclick="openGalleryImage(this.src,'Valorant')">
+    <img src="imgs/GAMES/GAME4.png" onclick="openGalleryImage(this.src,'God Of War (2018)')">
+    <img src="imgs/GAMES/GAME5.jpg" onclick="openGalleryImage(this.src,'Tekken 8')">
+    <img src="imgs/GAMES/GAME6.jpg" onclick="openGalleryImage(this.src,'Dark Souls')">
+  </div>
+
+</div>
+</div>
+  </section>
+
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+
+ <div class="projects-grid">
+  
+  <div class="project-card">
+    <h3>Myth Studio Website</h3>
+    <p>A responsive booking and portfolio website for a creative studio.</p>
+  </div>
+
+  <div class="project-card">
+    <h3>ValPaws System</h3>
+    <p>A pet recovery and monitoring system with mobile integration.</p>
+  </div>
+
+  <div class="project-card graphic-card">
+    <h3>Graphic Design Works</h3>
+    <p>A collection of branding, posters, layouts, and digital art projects.</p>
+  </div>
+
+</div>
+
+<!-- POSTERS -->
+<div class="carousel-container">
+
+  <h3 class="carousel-title">Graphic Design Works</h3>
+
+  <div class="gallery-grid">
+
+    <img src="imgs/DIGITAL CREATIONS/showcase1.jpg" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DIGITAL CREATIONS/showcase2.png" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DIGITAL CREATIONS/showcase3.png" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DIGITAL CREATIONS/showcase4.png" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DIGITAL CREATIONS/showcase5.png" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DIGITAL CREATIONS/showcase6.png" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DIGITAL CREATIONS/showcase9.png" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DIGITAL CREATIONS/showcase8.png" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DIGITAL CREATIONS/showcase7.jpg" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DIGITAL CREATIONS/showcase10.jpg" onclick="openGalleryImage(this.src)">
+
+  </div>
+</div>
+
+<!-- DRAWINGS -->
+<div class="carousel-container">
+
+  <h3 class="carousel-title">Digital and Traditional Drawings</h3>
+
+  <div class="gallery-grid">
+
+    <img src="imgs/DRAWINGS/DIGITAL/DIGI1.jpg" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DRAWINGS/DIGITAL/DIGI2.jpg" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DRAWINGS/DIGITAL/DIGI3.jpg" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DRAWINGS/DIGITAL/DIGI4.jpg" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DRAWINGS/DIGITAL/DIGI5.jpg" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DRAWINGS/DIGITAL/DIGI6.jpg" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DRAWINGS/DIGITAL/DIGI7.jpg" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DRAWINGS/DIGITAL/DIGI8.jpg" onclick="openGalleryImage(this.src)">
+    <img src="imgs/DRAWINGS/DIGITAL/DIGI9.jpg" onclick="openGalleryImage(this.src)">
+    
+    <div class="show-more-card" onclick="openDrawingsPopup()">
+      <div class="show-more-content">
+        <span>+25 More</span>
+        <p>View Extra Creations</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="drawings-popup-modal" class="drawings-popup" onclick="closeDrawingsPopup()">
+  <span class="drawings-popup-close" onclick="closeDrawingsPopup()">&times;</span>
+  
+  <div class="drawings-popup-content" onclick="event.stopPropagation()">
+    <h3>More Digital & Traditional Drawings</h3>
+    <div class="popup-gallery-grid">
+      <img src="imgs/DRAWINGS/DIGITAL/DIGI10.jpg" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/DIGITAL/DIGI11.jpg" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/DIGITAL/DIGI12.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/DIGITAL/DIGI13.jpg" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/1.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/2.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/3.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/4.jpg" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/5.jpg" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/6.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/7.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/8.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/9.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/10.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/11.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/12.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/13.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/14.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/15.jpg" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/16.jpg" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/17.jpg" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/18.jpg" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/19.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/20.webp" onclick="openGalleryImage(this.src)">
+      <img src="imgs/DRAWINGS/TRADITIONAL/21.jpg" onclick="openGalleryImage(this.src)">
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" onclick="closeGallery()">
+
+  <span class="close">&times;</span>
+
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <img id="lightbox-img" src="">
+    <h3 id="lightbox-title"></h3>
+  </div>
+
+</div>
+</section>
+
+<section id="featured-works">
+
+  <h2 class="section-title">Featured Works</h2>
+
+  <div class="slideshow">
+
+    <button class="slide-btn left" onclick="changeSlide(-1)">&#10094;</button>
+
+    <img id="slide-img" src="featured1.jpg" alt="Featured Work">
+
+    <button class="slide-btn right" onclick="changeSlide(1)">&#10095;</button>
+
+  </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+  <h2 class="section-title">Contact</h2>
+
+  <div class="contact-grid">
+
+    <!-- EMAIL -->
+    <a class="contact-card" href="mailto:rexongueta2025@gmail.com">
+
+      <img src="imgs/ICONS/gmail_logo.png" class="contact-logo" alt="Email Logo">
+      <h3>Email</h3>
+      <p>rexongueta2025@gmail.com</p>
+
+    </a>
+
+    <!-- LINKEDIN -->
+    <a class="contact-card" href="https://linkedin.com/in/yourname" target="_blank">
+
+      <img src="imgs/ICONS/linkedin_logo.png" class="contact-logo" alt="LinkedIn Logo">
+      <h3>LinkedIn</h3>
+      <p>linkedin.com/in/yourname</p>
+
+    </a>
+
+    <!-- GITHUB -->
+    <a class="contact-card" href="https://github.com/sasage20" target="_blank">
+
+      <img src="imgs/ICONS/github_logo.png" class="contact-logo" alt="GitHub Logo">
+      <h3>GitHub</h3>
+      <p>github.com/sasage20</p>
+
+    </a>
+
+    <!-- FACEBOOK -->
+    <a class="contact-card" href="https://facebook.com/rexon.gueta" target="_blank">
+
+      <img src="imgs/ICONS/facebook_logo.png" class="contact-logo" alt="Facebook Logo">
+      <h3>Facebook</h3>
+      <p>facebook.com/rexon.gueta</p>
+
+    </a>
+
+    <!-- INSTAGRAM -->
+    <a class="contact-card" href="https://www.instagram.com/mf.rexyyok" target="_blank">
+
+      <img src="imgs/ICONS/instagram_logo.png" class="contact-logo" alt="Instagram Logo">
+      <h3>Instagram</h3>
+      <p>@mf.rexyyok</p>
+
+    </a>
+
+    <!-- X -->
+    <a class="contact-card" href="https://x.com/rexyyok" target="_blank">
+
+      <img src="imgs/ICONS/x_logo.png" class="contact-logo" alt="X Logo">
+      <h3>X</h3>
+      <p>@rexyyok</p>
+
+    </a>
+
+  </div>
+
+</section>
+
+</section>
+
+  <footer>
+    <p>© 2026 Rexon Gueta. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  function toggleMedia(id) {
+
+    const galleries = document.querySelectorAll('.media-gallery');
+    const currentGallery = document.getElementById(id);
+
+    // CLOSE ALL OTHER GALLERIES
+    galleries.forEach(gallery => {
+
+      if (gallery.id !== id) {
+        gallery.style.maxHeight = "0px";
+        gallery.style.paddingTop = "0px";
+        gallery.classList.remove("active");
+      }
+
+    });
+
+    // IF CURRENT IS OPEN -> CLOSE IT
+    if (currentGallery.classList.contains("active")) {
+
+      currentGallery.style.maxHeight = "0px";
+      currentGallery.style.paddingTop = "0px";
+      currentGallery.classList.remove("active");
+
+    }
+
+    // OTHERWISE OPEN IT
+    else {
+
+      currentGallery.style.maxHeight =
+        currentGallery.scrollHeight + "px";
+
+      currentGallery.style.paddingTop = "15px";
+      currentGallery.classList.add("active");
+    }
+  }
+</script>
+
+<script>
+const galleries = {
+  poster: [
+    "poster1.jpg",
+    "poster2.jpg",
+    "poster3.jpg",
+    "poster4.jpg"
+  ],
+  drawing: [
+    "drawing1.jpg",
+    "drawing2.jpg",
+    "drawing3.jpg",
+    "drawing4.jpg"
+  ]
+};
+
+function openGallery(type, index) {
+  const lightbox = document.getElementById("lightbox");
+  const img = document.getElementById("lightbox-img");
+
+  img.src = galleries[type][index];
+  lightbox.style.display = "flex";
+}
+
+function closeGallery() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+<script>
+const featuredWorks = [
+  "featured1.jpg",
+  "featured2.jpg",
+  "featured3.jpg",
+  "featured4.jpg",
+  "featured5.jpg"
+];
+
+let currentSlide = 0;
+
+const slideImg = document.getElementById("slide-img");
+
+function showSlide(index) {
+  if (index < 0) {
+    currentSlide = featuredWorks.length - 1;
+  } else if (index >= featuredWorks.length) {
+    currentSlide = 0;
+  } else {
+    currentSlide = index;
+  }
+
+  slideImg.src = featuredWorks[currentSlide];
+}
+
+function changeSlide(step) {
+  showSlide(currentSlide + step);
+}
+
+// AUTO SLIDE
+setInterval(() => {
+  changeSlide(1);
+}, 5000);
+
+// INIT
+showSlide(0);
+
+function openDrawingsPopup() {
+  document.getElementById("drawings-popup-modal").style.display = "flex";
+  document.body.style.overflow = "hidden"; 
+}
+
+function closeDrawingsPopup() {
+  document.getElementById("drawings-popup-modal").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+// Update your existing closeGallery function to match this logic:
+function closeGallery() {
+  document.getElementById("lightbox").style.display = "none";
+  
+  // Check if the drawings pop-up is still open underneath
+  const drawingsPopup = document.getElementById("drawings-popup-modal");
+  if (drawingsPopup && drawingsPopup.style.display === "flex") {
+    // Keep page body lock enabled if the popup is still active
+    document.body.style.overflow = "hidden";
+  } else {
+    // Otherwise release scroll safely
+    document.body.style.overflow = "auto";
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+
