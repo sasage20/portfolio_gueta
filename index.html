@@ -89,10 +89,10 @@ function openGalleryImage(src, title = "") {
   <section class="hero" id="home">
     <div class="hero-text">
       <h1>Hello, I'm <span>Rexon Gueta</span></h1>
-      <h3>IT Student • Graphic Designer • Web Developer</h3>
+      <h3>IT Student • Graphic Designer • UI/UX Designer</h3>
 
       <p>
-        I create modern websites, creative graphics, and interactive digital experiences.
+        I create website frameworks, creative graphics, and interactive digital experiences.
         Welcome to my personal portfolio.
       </p>
 
@@ -110,7 +110,7 @@ function openGalleryImage(src, title = "") {
     <div class="about-content">
       <p>
         I am an Information Technology student from Pamantasan ng Lungsod ng Valenzuela.
-        I enjoy designing websites, editing videos, creating graphics,
+        I enjoy designing art as a whole, whether it is traditional or digital as well as editing videos, creating graphics,
         and building user-friendly digital projects.
       </p>
     </div>
@@ -195,22 +195,22 @@ function openGalleryImage(src, title = "") {
 
   <div class="projects-grid">
     <div class="project-card" onclick="openProjectModal('myth')">
-      <h3>Myth Studio Website</h3>
+      <h3>Myth Studio Website (UI/UX & Design Lead)</h3>
       <p class="short-desc">A responsive booking and portfolio website for a creative studio.</p>
     </div>
 
     <div class="project-card" onclick="openProjectModal('valpaws')">
-      <h3>ValPaws System</h3>
+      <h3>ValPaws System (UI/UX & Design Lead)</h3>
       <p class="short-desc">An NFC-based pet recovery and monitoring system with smart registration and tracking features.</p>
     </div>
 
     <div class="project-card" onclick="openProjectModal('passenger')">
-      <h3>The Dark Passenger</h3>
+      <h3>The Dark Passenger (Main Artist, Design Lead & Cinematographer)</h3>
       <p class="short-desc">A point-and-click cinematic horror game using real scenes with stylized, gritty visual editing.</p>
     </div>
 
     <div class="project-card" onclick="openProjectModal('hatakan')">
-      <h3>Hatakan Pababa</h3>
+      <h3>Hatakan Pababa (Main Artist & Design Lead)</h3>
       <p class="short-desc">A tabletop board game inspired by Philippine folklore, culture, and legendary heroes.</p>
     </div>
   </div>
@@ -321,22 +321,6 @@ function openGalleryImage(src, title = "") {
   </div>
 
 </div>
-</section>
-
-<section id="featured-works">
-
-  <h2 class="section-title">Featured Works</h2>
-
-  <div class="slideshow">
-
-    <button class="slide-btn left" onclick="changeSlide(-1)">&#10094;</button>
-
-    <img id="slide-img" src="featured1.jpg" alt="Featured Work">
-
-    <button class="slide-btn right" onclick="changeSlide(1)">&#10095;</button>
-
-  </div>
-
 </section>
 
 <section class="contact" id="contact">
@@ -477,42 +461,6 @@ function closeGallery() {
 </script>
 
 <script>
-const featuredWorks = [
-  "featured1.jpg",
-  "featured2.jpg",
-  "featured3.jpg",
-  "featured4.jpg",
-  "featured5.jpg"
-];
-
-let currentSlide = 0;
-
-const slideImg = document.getElementById("slide-img");
-
-function showSlide(index) {
-  if (index < 0) {
-    currentSlide = featuredWorks.length - 1;
-  } else if (index >= featuredWorks.length) {
-    currentSlide = 0;
-  } else {
-    currentSlide = index;
-  }
-
-  slideImg.src = featuredWorks[currentSlide];
-}
-
-function changeSlide(step) {
-  showSlide(currentSlide + step);
-}
-
-// AUTO SLIDE
-setInterval(() => {
-  changeSlide(1);
-}, 5000);
-
-// INIT
-showSlide(0);
-
 function openDrawingsPopup() {
   document.getElementById("drawings-popup-modal").style.display = "flex";
   document.body.style.overflow = "hidden"; 
